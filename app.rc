@@ -1,0 +1,5 @@
+// app.rc
+// This file is for linking the icon and manifest to the Windows executable.
+IDI_ICON1 ICON DISCARDABLE "appicon.ico"
+
+1 RT_MANIFEST "app.manifest"

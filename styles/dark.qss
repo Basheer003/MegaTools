@@ -1,0 +1,55 @@
+/* Dark Theme */
+QMainWindow {
+    background-color: #2d2d2d;
+}
+QTabWidget::pane {
+    border: 1px solid #454545;
+    background-color: #3c3c3c;
+}
+QTabBar::tab {
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #454545;
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+QTabBar::tab:selected {
+    background-color: #3c3c3c;
+    border-color: #454545;
+    font-weight: bold;
+}
+QTabBar::tab:!selected:hover {
+    background-color: #383838;
+}
+QWidget {
+    color: #f0f0f0;
+    background-color: #3c3c3c;
+}
+QLabel {
+    background-color: transparent;
+}
+QLineEdit, QPlainTextEdit, QTextEdit, QSpinBox, QDateTimeEdit, QListWidget {
+    background-color: #2d2d2d;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 5px;
+    color: #f0f0f0;
+}
+QPushButton, QToolButton {
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+QPushButton:hover {
+    background-color: #106ebe;
+}
+QPushButton:pressed {
+    background-color: #005a9e;
+}
+QToolButton {
+    padding: 5px;
+}

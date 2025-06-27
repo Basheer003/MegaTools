@@ -18,6 +18,9 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_actionLight_Mode_triggered();
+    void on_actionDark_Mode_triggered();
+
     // Slots for Text Conversions Tab
     void on_btnTextToHex_clicked();
     void on_btnHexToText_clicked();
@@ -34,26 +37,54 @@ private slots:
     void on_hexLineEdit_textChanged(const QString &text);
     void on_binLineEdit_textChanged(const QString &text);
     void on_octLineEdit_textChanged(const QString &text);
-    
+
     // Slots for Unix Timestamp Tab
     void on_btnTimestampToDate_clicked();
     void on_btnDateToTimestamp_clicked();
     void on_btnNow_clicked();
 
+    // -- NEW SLOTS for added tools --
+
+    // JSON Formatter Tab
+    void on_btnFormatJson_clicked();
+
+    // UUID Generator Tab
+    void on_btnGenerateUuid_clicked();
+    void on_btnCopyUuid_clicked();
+
+    // Lorem Ipsum Tab
+    void on_btnGenerateLorem_clicked();
+
+    // Color Converter Tab
+    void on_btnPickColor_clicked();
+    void on_hexColorLineEdit_textChanged(const QString &arg1);
+    void on_rgbColorLineEdit_textChanged(const QString &arg1);
+    void on_hslColorLineEdit_textChanged(const QString &arg1);
+
+    // Regex Tester Tab
+    void on_regexInput_textChanged(const QString &arg1);
+    void on_regexTestString_textChanged();
+
+
 private:
     Ui::MainWindow *ui;
 
+    void applyStyleSheet(const QString& sheetName);
+
     // Helper functions to avoid infinite signal loops
     void updateNumberBases(qint64 value, QObject* sender);
-    
+    void updateColorFields(const QColor& color, QObject* sender);
+
     // Member variables to prevent recursive updates
     bool m_isUpdatingNumberBases = false;
-    
-    // Validators for number base inputs
+    bool m_isUpdatingColors = false;
+
+    // Validators
     QValidator *decValidator;
     QValidator *hexValidator;
     QValidator *binValidator;
     QValidator *octValidator;
+    QValidator *hexColorValidator;
 };
 
 #endif // MAINWINDOW_H
